@@ -1,22 +1,35 @@
-SpreeLimitBackorder
+Spree / Limit Backorders
 ===================
 
-Introduction goes here.
+When a product/variant is marked as backorderable, spree allows an unlimited number of backorders.
+
+This extenstion allows you set a cap for backorders in the admin.
+
+Usage
+-----------
+
+To set the limit:
+
+- Go to Admin -> Products -> Edit -> Stock Locations
+- Check off the "Backorderable" option
+- Enter a max value (a max zero allows infinite backorders)
+- Click "save"
+
 
 Installation
 ------------
 
-Add spree_limit_backorder to your Gemfile:
+Add spree_limit_backorders to your Gemfile:
 
 ```ruby
-gem 'spree_limit_backorder'
+gem 'spree_limit_backorders', github: 'joshnuss/spree_limit_backorders'
 ```
 
 Bundle your dependencies and run the installation generator:
 
 ```shell
 bundle
-bundle exec rails g spree_limit_backorder:install
+bundle exec rails g spree_limit_backorders:install
 ```
 
 Testing
@@ -33,7 +46,7 @@ When testing your applications integration with this extension you may use it's 
 Simply add this require statement to your spec_helper:
 
 ```ruby
-require 'spree_limit_backorder/factories'
+require 'spree_limit_backorders/factories'
 ```
 
-Copyright (c) 2015 [name of extension creator], released under the New BSD License
+Copyright (c) 2015 joshnuss@gmail.com, released under the New BSD License
