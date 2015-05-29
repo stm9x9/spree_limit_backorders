@@ -5,7 +5,9 @@
         id: "stock_item_backorderable_#{item.stock_location.id}" %>
 
   <p>
-    <%= label_tag 'stock_item[max_backorders]', 'Max', title: 'For unlimited backorders, enter zero' %>
+    <%= label_tag 'stock_item[max_backorders]', Spree.t(:max), title: 'For unlimited backorders, enter zero' %>
     <%= number_field_tag 'stock_item[max_backorders]', item.max_backorders, class: 'stock_item_max_backorders' %>
   </p>
+
+  <%= link_to Spree.t(:save), '#save', class: 'save-link' %>
 <% end %>
