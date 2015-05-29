@@ -9,6 +9,10 @@ module SpreeLimitBackorders
       g.test_framework :rspec
     end
 
+    initializer 'spree_limit_backorders.permitted_attributes' do
+      Spree::PermittedAttributes.stock_item_attributes << :max_backorders
+    end
+
     def self.activate
       Dir.glob(File.join(File.dirname(__FILE__), '../../app/**/*_decorator*.rb')) do |c|
         Rails.configuration.cache_classes ? require(c) : load(c)
